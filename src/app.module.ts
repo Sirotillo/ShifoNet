@@ -27,11 +27,7 @@ import { Doctor } from "./doctors/Models/doctor.model";
     ConfigModule.forRoot({ envFilePath: ".env", isGlobal: true }),
     SequelizeModule.forRoot({
       dialect: "postgres",
-      host: process.env.PG_HOST,
-      port: Number(process.env.PG_PORT),
-      username: process.env.PG_USER,
-      password: process.env.PG_PASSWORD,
-      database: process.env.PG_DB,
+      uri: process.env.DATABASE_URL,
       models: [
         Patient,
         Payment,
