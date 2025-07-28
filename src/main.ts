@@ -8,10 +8,7 @@ async function start() {
   try {
     const PORT = process.env.PORT || 3030;
     const app = await NestFactory.create(AppModule);
-    app.enableCors({
-      origin: ["https://shifonet-production.up.railway.app/"], 
-      credentials: true,
-    });
+    app.enableCors({});
 
     app.setGlobalPrefix("api");
 
