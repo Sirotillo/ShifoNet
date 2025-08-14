@@ -21,6 +21,8 @@ import { AppointmentsModule } from "./appointments/appointments.module";
 import { Appointment } from "./appointments/Models/appointment.model";
 import { DoctorsModule } from "./doctors/doctors.module";
 import { Doctor } from "./doctors/Models/doctor.model";
+import { Car } from "./treatment copy/Models/car.model";
+import { CarModule } from "./treatment copy/treatment.module";
 
 @Module({
   imports: [
@@ -38,6 +40,7 @@ import { Doctor } from "./doctors/Models/doctor.model";
         ClinicalNote,
         Appointment,
         Doctor,
+        Car,
       ],
       autoLoadModels: true,
       sync: { alter: true },
@@ -54,6 +57,7 @@ import { Doctor } from "./doctors/Models/doctor.model";
     ClinicalNotesModule,
     AppointmentsModule,
     DoctorsModule,
+    CarModule,
   ],
   controllers: [],
   providers: [],
