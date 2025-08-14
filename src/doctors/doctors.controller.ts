@@ -21,31 +21,31 @@ import { ApiTags } from "@nestjs/swagger";
 export class DoctorsController {
   constructor(private readonly doctorsService: DoctorsService) {}
 
-  @UseGuards(JwtAuthGuard, AdminGuard)
+  // @UseGuards(JwtAuthGuard, AdminGuard)
   @Post()
   create(@Body() createDoctorDto: CreateDoctorDto) {
     return this.doctorsService.create(createDoctorDto);
   }
 
-  @UseGuards(JwtAuthGuard, AdminGuard)
+  // @UseGuards(JwtAuthGuard, AdminGuard)
   @Get()
   findAll() {
     return this.doctorsService.findAll();
   }
 
-  @UseGuards(JwtAuthGuard, JwtSelfGuard)
+  // @UseGuards(JwtAuthGuard, JwtSelfGuard)
   @Get(":id")
   findOne(@Param("id") id: string) {
     return this.doctorsService.findOne(+id);
   }
 
-  @UseGuards(JwtAuthGuard, JwtSelfGuard)
+  // @UseGuards(JwtAuthGuard, JwtSelfGuard)
   @Patch(":id")
   update(@Param("id") id: string, @Body() updateDoctorDto: UpdateDoctorDto) {
     return this.doctorsService.update(+id, updateDoctorDto);
   }
 
-  @UseGuards(JwtAuthGuard, AdminGuard)
+  // @UseGuards(JwtAuthGuard, AdminGuard)
   @Delete(":id")
   remove(@Param("id") id: string) {
     return this.doctorsService.remove(+id);
